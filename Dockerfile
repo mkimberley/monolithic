@@ -1,8 +1,8 @@
 FROM mkimberley84/generic:latest
-MAINTAINER LanCache.Net Team <team@lancache.net>
+MAINTAINER matt.kimberley84@gmail.com
 
 ENV GENERICCACHE_VERSION 2
-ENV WEBUSER www-data
+ENV WEBUSER nginx
 ENV CACHE_MEM_SIZE 500m
 ENV CACHE_DISK_SIZE 3000000m
 ENV CACHE_MAX_AGE 3560d
@@ -17,8 +17,8 @@ COPY overlay/ /
 
 RUN mkdir -m 755 -p /data/cachedomains		;\
 	mkdir -m 755 -p /tmp/nginx				;\
-	apt-get update							;\
-	apt-get install -y jq git				;
+	dnf -y update							;\
+	dnf -y install jq git				;
 
 
 VOLUME ["/data/logs", "/data/cache", "/data/cachedomains", "/var/www"]
