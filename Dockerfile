@@ -1,4 +1,4 @@
-FROM lancachenet/generic:latest
+FROM mkimberley84/generic:latest
 MAINTAINER LanCache.Net Team <team@lancache.net>
 
 ENV GENERICCACHE_VERSION 2
